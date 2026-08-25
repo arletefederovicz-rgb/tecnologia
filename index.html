@@ -1,23 +1,141 @@
-YPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog Tech</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>meu blog tech</h1>
-  <p>A tecnologia atual é marcada pela onipresença da Inteligência Artificial (IA) generativa,
-       internet de alta velocidade e hiperconectividade. Essas inovações impactam o dia a dia,
-       desde a automação de tarefas até a automação residencial e o uso de deep techs.</p>
-       <h2>meu primeiro post</h2>
-       <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
-       <p>por arlete federovicz</p>
-       <header>
-          <h1>meu blog tech</h1>
-          <p>vou compartilhar comhecimento sobre tecnologia e programação</p>
-       </header>
-<
-<img src="" alt="">
-<img src="https://pixnio.com/free-images/2018/06/28/2018-06-28-08-09-28.jpg" 
-alt="https://gemini.google.com/app/14246ac553acde39?hl=pt-BR">
+    <header>
+        <h1>Meu Blog Tech</h1>
+        <p>Vou compartilhar conhecimento sobre tecnologia e programação.</p>
+    </header>
+
+    <main>
+        <article>
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p>A tecnologia atual é marcada pela onipresença da Inteligência Artificial (IA) generativa, internet de alta velocidade e hiperconectividade. Essas inovações impactam o dia a dia, desde a automação de tarefas até a automação residencial e o uso de deep techs.</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <p class="artigo-autor">Por Arlete Federovicz</p>
+                <button>❤️‍🔥 <span>0</span></button>
+            </div>
+            <img src="https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg" alt="Computadores e tecnologia">
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+/* Configuração geral */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a; /* Fundo escuro */
+    color: #e2e8f0;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #38bdf8; /* Azul claro reluzente */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    border: 1px solid #334155;
+}
+
+header h1 {
+    margin: 0 0 8px 0;
+}
+
+header p {
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Conteúdo Principal */
+main {
+    background-color: #1e293b;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    border: 1px solid #334155;
+}
+
+/* Post do Blog */
+article {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+article h2 {
+    color: #f8fafc;
+    margin-top: 0;
+}
+
+article p {
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+.artigo-autor {
+    font-weight: bold;
+    color: #38bdf8; /* Destaque no nome da autora */
+}
+
+/* Imagem */
+img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #38bdf8;
+}
+
+/* Botão de Curtida */
+button {
+    background-color: #334155;
+    color: #ffffff;
+    border: 1px solid #475569;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #475569;
+    transform: scale(1.05);
+}
+JavaScript
+
+
+const botoes = document.querySelectorAll("button");
+
+botoes.forEach(function (botao) {
+    let curtiu = false;
+    botao.addEventListener("click", function () {
+        let texto = botao.querySelector("span");
+        let contador = parseInt(texto.textContent);
+        
+        if (!curtiu) {
+            texto.textContent = contador + 1;
+            curtiu = true;
+            botao.classList.add("curtido"); // Adiciona cor vermelha
+        } else {
+            texto.textContent = contador - 1;
+            curtiu = false;
+            botao.classList.remove("curtido"); // Volta à cor normal
+        }
+    });
+});
